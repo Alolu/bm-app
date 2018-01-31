@@ -9,9 +9,9 @@ import ProfilView from './src/View/ProfilView';
 import ParamView from './src/View/ParamView';
 
 const App = TabNavigator({
+    Param:  { screen: ParamView},
     Map:    { screen: MapView },
-    Profil: { screen: ProfilView },
-    Param:  { screen: ParamView}
+    Profil: { screen: ProfilView }
   },
   {
     tabBarPosition: "bottom",
@@ -22,8 +22,8 @@ const App = TabNavigator({
           <FooterTab>
             <Button
             vertical
-            onPress={() => props.navigation.navigate('Profil')}
-            active={props.navigationState.index === 1}
+            onPress={() => props.navigation.navigate('Param')}
+            active={props.navigationState.index === 0}
             >
               <WrapperIcon family="FontAwesome" name="gear" />
               <Text>Paramètres</Text>
@@ -32,7 +32,7 @@ const App = TabNavigator({
             <Button 
             vertical
             onPress={() => props.navigation.navigate('Map')}
-            active={props.navigationState.index === 0}
+            active={props.navigationState.index === 1}
             >
               <WrapperIcon family="MaterialCommunityIcons" name="earth" />
               <Text>Carte</Text>
@@ -40,7 +40,7 @@ const App = TabNavigator({
             </Button>
             <Button
             vertical
-            onPress={() => props.navigation.navigate('Param')}
+            onPress={() => props.navigation.navigate('Profil')}
             active={props.navigationState.index === 2}
             >
               <WrapperIcon family="MaterialIcons" name="account-circle" />
