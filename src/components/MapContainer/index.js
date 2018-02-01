@@ -16,18 +16,21 @@ class MapContainer extends React.Component {
 	componentWillReceiveProps(nextProps) {
     		const markers = [
 			  {
+			  	id:1,
 			    latitude: nextProps.region.latitude+0.1,
 			    longitude: nextProps.region.longitude,
 			    title: 'Foo Place',
 			    subtitle: '1234 Foo Drive'
 			  },
-			  {
+			  {	
+			  	id:2,
 			    latitude: nextProps.region.latitude+0.2,
 			    longitude: nextProps.region.longitude,
 			    title: 'Foo Place',
 			    subtitle: '1234 Foo Drive'
 			  },
-			  {
+			  {	
+			  	id:3,
 			    latitude: nextProps.region.latitude+0.3,
 			    longitude: nextProps.region.longitude,
 			    title: 'Foo Place',
@@ -48,6 +51,7 @@ class MapContainer extends React.Component {
 				>
 					{this.state.markers.map(marker => (
 				    <MapView.Marker
+				    	key={marker.id}
 				        coordinate={{latitude: marker.latitude,
 	            		longitude: marker.longitude}}
 				        title={marker.title}
