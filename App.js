@@ -15,7 +15,6 @@ const App = TabNavigator({
   },
   {
     tabBarPosition: "bottom",
-    swipeEnabled: true,
     tabBarComponent: props => {
       return(
         <Footer>
